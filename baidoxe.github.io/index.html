@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="image/utc.jpg">
+    <title>Bãi đỗ xe</title>
+</head>
+
+<body>
+    <!-- header -->
+    <div class="navbar">
+        <a href="index.php" class="active">Home</a>
+        <!-- <a href="booking.php">Booking</a> -->
+        <!-- <a href="#" class="right" onclick="document.getElementById('id01').style.display='block'">Login</a> -->
+    </div>
+
+    <div id="id01" class="modal">
+        <form class="modal-content animate" action="/action_page.php" method="post">
+            <div class="container-login">
+                <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required>
+                <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+                <button type="submit" class="login">Login</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- body -->
+    <div class="container">
+        <div style="text-align:center">
+            <h2>Welcome</h2>
+            <p>You can book your parking space here</p>
+        </div>
+        <div class="row">
+            <div class="column">
+            <img src="https://www.w3schools.com/w3images/map.jpg" style="width:100%" title="bãi đỗ xe">
+            </div>
+            <div class="column">
+                <form action="add.php" method="post">
+                    <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                    <label for="phone">Phone Number</label>
+                        <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
+                    <label for="fname">Check in</label>
+                        <input type="datetime-local" id="time" name="time" required title="time"> 
+                    <label for="place">Place</label>
+                    <select id="place" name="place">
+                        <option value="A1">A1</option>
+                        <option value="A2">A2</option>
+                        <option value="A3">A3</option>
+                        <option value="A4">A4</option>
+                    </select>
+                    <label for="car">Car Number</label>
+                        <input type="text" id="car" name="car" placeholder="Car Number" required>
+                    <input type="submit" name="submit" value="Submit" onclick="save()">
+                    <!-- <button name="submit" type="submit" value="Submit">Submit</button> -->
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+<script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+<script src="firebase.js"></script>
+
+
+<!-- footer -->
+<div class="footer">
+    <div class="col">
+        <ul>
+            <li>UTC CAR PARKING</li>
+            <li>Phone number: (84.24) 37663311 - Fax: (84.24)37669613</li>
+            <li>Email: contact@utc.edu.vn</li>
+        </ul>
+    </div>
+    <div class="col social">
+        <ul>
+            <li><img src="image/1.png" width="32" style="width: 32px;"></li>
+            <li><img src="image/2.png" width="32" style="width: 32px;"></li>
+            <li><img src="image/3.png" width="32" style="width: 32px;"></li>
+        </ul>
+    </div>
+    <footer class="foot">
+        <p> Copyright © 2022 - All rights Reserved</p>
+    </footer>
+</div>
+
+</body>
+
+</html>
